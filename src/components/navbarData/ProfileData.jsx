@@ -55,11 +55,11 @@ export const ProfileData = () => {
           <StyledDiv visible = {profileVisible} onMouseLeave= {() => dispatch(inVisProfile())}>
                  <div>
                            <div>
-                                  <StyledLink link to = "/">Sign In</StyledLink> 
+                                  <StyledLink link to = "/accountSign/AccountSign">Sign In</StyledLink> 
                                  
                            </div>
                            <div>
-                           <StyledLink link to = "/">Join</StyledLink>    
+                           <StyledLink link to = "/accountSign/AccountJoin">Join</StyledLink>    
                            </div>
                            <div onClick = {() => dispatch(inVisProfile())}>
                                 <AiOutlineClose style = {{
@@ -68,10 +68,10 @@ export const ProfileData = () => {
                            </div>
                  </div>
                  <div>
-                         <StyledLink to = "/">
+                         <StyledLink to = "/accountSign/AccountJoin">
                                 <CgProfile />
                          </StyledLink>
-                         <StyledLink to ="/">My Account</StyledLink>
+                         <StyledLink to ="/accountSign/AccountJoin">My Account</StyledLink>
                  </div>
                  <div>
                          <StyledLink to = "/">

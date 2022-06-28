@@ -9,11 +9,12 @@ import React from "react";
 import {ProfileData} from "./navbarData/ProfileData"
 import {useDispatch} from "react-redux";
 import {toggleProfile , inVisProfile} from "../Redux/profileData/action";
+import asosLogo from  "./../logos/asosLogo.png";
 
 const HeaderDiv = Styled.div`
 font-family : futura-pt,sans-serif;
-
 `
+
 const NavbarFirst = Styled.div`
 
   display : flex;
@@ -112,7 +113,7 @@ const Navbar = () => {
                     <NavbarFirst>
                              <div>
                                    <StyledLink to = "/">
-                                       <img alt = "logo" src = {"asosLogo.png"} />
+                                       <img alt = "logo" src = {asosLogo} />
                                    </StyledLink>
                              </div>   
                              <WomenDiv border = {border} gender = {click} onClick = {handleClick1}>

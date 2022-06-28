@@ -1,6 +1,7 @@
 import React from 'react';
-
 import Navbar from "./components/Navbar";
+import {AccountSign} from "./components/accountSign/AccountSign";
+import {AccountJoin} from "./components/accountSign/AccountJoin"
 import {Routes , Route} from "react-router-dom";
 
 function App() {
@@ -10,8 +11,8 @@ function App() {
          <Routes>
                 <Route path = "/" elemnet = {<Navbar />}></Route>
                 <Route path = "/" elemnet = {<Navbar />}></Route>
-                <Route path = "/" elemnet = {<Navbar />}></Route>
-                <Route path = "/" elemnet = {<Navbar />}></Route>
+                <Route path = "/accountSign/AccountSign" element = {<AccountSign />}></Route>
+                <Route path = "/accountSign/AccountJoin" element = {<AccountJoin />}></Route>
                 <Route path = "/" elemnet = {<Navbar />}></Route>
                 <Route path = "/" elemnet = {<Navbar />}></Route>
                 <Route path = "/" elemnet = {<Navbar />}></Route>
