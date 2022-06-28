@@ -1,12 +1,21 @@
 import React from 'react';
-import './App.css';
+
+import Navbar from "./components/Navbar";
+import {Routes , Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <>
-        <h1>ASOS Clone</h1>
-      </>
+    <div>
+         <Navbar />
+         <Routes>
+                <Route path = "/" elemnet = {<Navbar />}></Route>
+                <Route path = "/" elemnet = {<Navbar />}></Route>
+                <Route path = "/" elemnet = {<Navbar />}></Route>
+                <Route path = "/" elemnet = {<Navbar />}></Route>
+                <Route path = "/" elemnet = {<Navbar />}></Route>
+                <Route path = "/" elemnet = {<Navbar />}></Route>
+                <Route path = "/" elemnet = {<Navbar />}></Route>
+         </Routes>
     </div>
   );
 }
