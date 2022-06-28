@@ -1,6 +1,6 @@
 { 
     "women-all" : [
-        [
+        
             {
                 "id": 202189778,
                 "name": "Peek & Beau Fuller Bust Exclusive triangle bikini top in green texture",
@@ -2449,21 +2449,21 @@
                 "isSellingFast": false,
                 "sponsoredCampaignId": null
             }
-        ]
+        
 ],
     "men-all" : [
-        [
+        
             {
                 "id": 202619810,
                 "name": "Only & Sons polo in dark grey colour block",
                 "price": {
-                    "current": {
+                    "current": { 
                         "value": 21,
                         "text": "£21.00"
                     },
                     "previous": {
-                        "value": null,
-                        "text": ""
+                        "value": 34.56,
+                        "text": "£34.56"
                     },
                     "rrp": {
                         "value": null,
@@ -2473,7 +2473,7 @@
                     "isOutletPrice": false,
                     "currency": "GBP"
                 },
-                "colour": "",
+                "colour": "dark grey",
                 "colourWayId": 202619811,
                 "brandName": "Only & Sons",
                 "hasVariantColours": false,
@@ -4901,7 +4901,7 @@
                 "isSellingFast": false,
                 "sponsoredCampaignId": null
             }
-        ]
+        
 ],
     "shoes" : [
     {

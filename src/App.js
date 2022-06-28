@@ -1,12 +1,16 @@
 import React from 'react';
-import './App.css';
+import { Route, Routes } from 'react-router';
+
+import { Productdetails } from './components/proddesc';
 
 function App() {
   return (
     <div className="App">
-      <>
-        <h1>ASOS Clone</h1>
-      </>
+      
+     <Routes>
+      <Route path="/products/:productid" element={<Productdetails />}> </Route>
+     </Routes>
+     
     </div>
   );
 }
