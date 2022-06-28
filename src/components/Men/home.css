@@ -1,0 +1,130 @@
+*{
+    text-align: center;
+}
+#header{
+    width: 100%;
+   background-image: url("https://content.asos-media.com/-/media/homepages/unisex/homepages/2021/12_dec/sale/xmas-sale-2021/single-gradient/5/desktop.jpg");
+}
+span>h1{
+    font-size: 48px;
+}
+#itemList{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    width: 80%;
+    overflow-x:scroll;
+    margin: auto;
+    scroll-behavior: smooth;
+}
+#itemList>div{
+    background-color: white;
+    font-size: large;
+    font-weight: 500;
+    margin: 15px;
+}
+#itemList::-webkit-scrollbar{
+    display: none;
+}
+.sliderButton{
+    margin: auto;
+    color: rgba(0, 0, 0, 0.337);
+}
+.sliderButton :hover{
+    color: black;
+    cursor: pointer;
+}
+.sliderImg{
+    width: 200px;
+    overflow: hidden;
+    
+}
+.sliderImg>img{
+    width: 100%;
+    transition: transform 1s;
+}
+.sliderImg :hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+#middle{
+    margin-top: 50px;  
+}
+#midButDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: -170px;
+}
+.midH1{
+    margin: auto;
+    background-color: white;
+    font-size: 36px;
+}
+.midH2{
+    background-color: white;
+    color: black;
+    margin: auto;
+}
+.midH2 :hover{
+    background-color: black;
+    color: white;
+}
+#middle2{
+    margin-top: 350px;
+    background: url(https://content.asos-media.com/-/media/homepages/unisex/homepages/2021/12_dec/sale/xmas-sale-2021/single-gradient/1/desktop.jpg);
+}
+#bottom{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 80%;
+    margin: 50px auto;
+}
+#bottom>div{
+    width: 280px;
+    height: 400px;
+}
+#bottom>div>img{
+    width: 100%;
+    height: 100%;
+}
+#bottom2{
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 160px auto;
+    /* gap: 70px; */
+}
+#bottom2>div{
+    margin: auto;
+    width:520px;
+    height: auto;
+}
+#bottom2>div>img{
+    width: 100%;
+    height: 90%;
+}
+#bottom2>div>button{
+    padding: 3%;
+    background-color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#bottom2>div>p{
+    font-weight: 400;
+}
+
+button{
+    padding: 1%;
+    font-size: 18px;
+    font-weight: bold;
+    width: 200px;
+    background-color: white;
+}
+button :hover{
+    background-color: black;
+}
+#footer{
+    margin-top: 200px;
+}
