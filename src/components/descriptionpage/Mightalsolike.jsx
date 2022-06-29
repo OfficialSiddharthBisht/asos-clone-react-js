@@ -22,7 +22,7 @@ const MightLike=styled.div`
 const MightAlsoLike=()=>{
     return (
         <MightLike>
-          <H1 >You Might Also Like</H1>
+          <H1 style={{marginBottom:"20px"}}>You Might Also Like</H1>
           <Maincontainer>
             <div style={{width:"190px",height:"auto",lineHeight:"0px"}}>
                 <img src="https://images.asos-media.com/products/asos-design-skinny-stretch-cord-trousers-in-black/201088154-1-black?$n_320w$&wid=317&fit=constrain" alt="" width="100%" height="auto" />

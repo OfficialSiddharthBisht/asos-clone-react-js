@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import {Children, useRef} from "react";
+import { useRef} from "react";
+import { useSelector,useDispatch } from "react-redux";
+import {incCart} from "../../Redux/proddesc/action"
+
 const Mrightbox=styled.div`
-display:inline-block;
+  display:inline-block;
   width:22%;
   margin-right:250px;
   padding:10px;
+  margin-bottom:50px;
 `;
 const Select=styled.select`
   width:100%;
@@ -111,6 +115,10 @@ const Aboutme=styled.div`
 `;
  
 const Rightdescbox=({pdata})=>{
+
+  const dispatch=useDispatch();
+  const sizeref=useRef();
+  const stylealert=useRef();
   const box1ref=useRef();
   const box1ref1=useRef();
   const box2ref=useRef();
@@ -166,8 +174,31 @@ const Rightdescbox=({pdata})=>{
       box5ref1.current.children[1].className="fa-solid fa-minus";
     }
   }
+
+  const Addtocart=()=>{
+    // console.log(sizeref.current.value);
+    // console.log(stylealert.current.style.display);
+    if(sizeref.current.value==="Please select"){
+      stylealert.current.style.display="block"
+    }else{
+      let Size=sizeref.current.value;
+      stylealert.current.style.display="none";
+      let data={...pdata[0],size:Size};
+      fetch(`http://localhost:8080/cart`,{
+        method:"POST",
+        body:JSON.stringify(data),
+        headers:{
+          "Content-Type":"application/json"
+        }
+      }).then((res)=>res.json())
+      .then((res)=>{
+          dispatch(incCart(1));
+      })
+    }
+  }
  return(
     <Mrightbox>
+  
         <h1 style={{fontFamily:"futura-pt-n4,futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif",fontStyle:"normal",fontWeight:"400",fontSize:"20px",lineHeight:"1.3",
         letterSpacing:"1.3px",paddingBottom:"12px",color:"#2d2d2d"}}
         >{pdata[0].name}</h1>
@@ -195,7 +226,7 @@ const Rightdescbox=({pdata})=>{
          fontSize:"14px",fontStyle:"normal",lineHeight:"1.7",letterSpacing:".4px",fontFamily:"futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif"}} href="#"
         >Size Guide</a></div>
 
-        <Select name="" id="">
+        <Select ref={sizeref} name="" id="">
             <option value="Please select">Please select</option>
             <option value="UK 4">UK 4</option>
             <option value="UK 6">UK 6</option>
@@ -207,22 +238,26 @@ const Rightdescbox=({pdata})=>{
             <option value="UK 18">UK 18</option>
         </Select>
 
+        <div ref={stylealert} style={{width:"100%",padding:"10px",backgroundColor:"#fae7ec",marginTop:"20px",display:"none"}}>
+          <p>Please select from the available colour and size options</p>
+        </div>
+
         <div style={{width:"100%",fontFamily:"futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif",marginTop:"30px"}} >
-         <Button >ADD TO BAG</Button>   
-         <Span> <i  class="fa-solid fa-heart"></i></Span>
+         <Button onClick={()=>Addtocart()} >ADD TO BAG</Button>   
+         <Span> <i  className="fa-solid fa-heart"></i></Span>
         </div>
 
         <div style={{border:"1px solid #ccc",marginTop:"30px",padding:"10px"}}>
-            <p><span><i class="fa-solid fa-truck"></i></span><span>&nbsp;&nbsp;Free Delivery</span></p>
+            <p><span><i className="fa-solid fa-truck"></i></span><span>&nbsp;&nbsp;Free Delivery</span></p>
              <p style={{font:"inherit",letterSpacing:".6px"}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ts & Cs apply.<a style={{color:"#2d2d2d"}} href="#">Learn more</a>  </p>
         </div>
         
         <Productdetails >
-          <div><Button1 ref={box1ref1} onClick={()=>{handledisplay1()}} style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Product Details</span><i style={{float:"right"}} class="fa-solid fa-minus"></i></Button1>
+          <div><Button1 ref={box1ref1} onClick={()=>{handledisplay1()}} style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Product Details</span><i style={{float:"right"}} className="fa-solid fa-minus"></i></Button1>
                     <div ref={box1ref} style={{display:"block"}}>
                       <br />
                        <strong><a style={{color:"#2d2d2d"}} href="#">Trousers</a></strong><span>&nbsp;by&nbsp;</span><strong><a style={{color:"#2d2d2d"}} href="#">ASOS DESIGN</a></strong>
-                      <ul style={{lineHeight:"1.7"}}>
+                      <ul style={{lineHeight:"1.7",marginLeft:"20px"}}>
                           <li>Part of our responsible edit</li>
                           <li>Regular rise</li>
                           <li>Elasticated drawstring waist</li>
@@ -235,7 +270,7 @@ const Rightdescbox=({pdata})=>{
         </Productdetails>
 
         <Brand >
-        <div><Button1 ref={box2ref1} onClick={()=>{handledisplay2()}}  style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Brand</span><i style={{float:"right"}} class="fa-solid fa-plus"></i></Button1>
+        <div><Button1 ref={box2ref1} onClick={()=>{handledisplay2()}}  style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Brand</span><i style={{float:"right"}} className="fa-solid fa-plus"></i></Button1>
                     <div ref={box2ref}  style={{display:"none",lineHeight:"1.4"}}>
                       <br />
                       This is &nbsp; 
@@ -250,7 +285,7 @@ const Rightdescbox=({pdata})=>{
         </Brand>
         
         <Size>
-        <div><Button1 ref={box3ref1} onClick={()=>{handledisplay3()}}  style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Size & Fit</span><i style={{float:"right"}} class="fa-solid fa-plus"></i></Button1>
+        <div><Button1 ref={box3ref1} onClick={()=>{handledisplay3()}}  style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Size & Fit</span><i style={{float:"right"}} className="fa-solid fa-plus"></i></Button1>
                     <div ref={box3ref} style={{display:"none",lineHeight:"1.4"}}>
                       <br />
                       <p>Model's height: 188cm/6'2"</p>
@@ -259,7 +294,7 @@ const Rightdescbox=({pdata})=>{
           </div>
         </Size>
         <Lookafterme>
-        <div><Button1 ref={box4ref1} onClick={()=>{handledisplay4()}} style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Look After Me</span><i style={{float:"right"}} class="fa-solid fa-plus"></i></Button1>
+        <div><Button1 ref={box4ref1} onClick={()=>{handledisplay4()}} style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>Look After Me</span><i style={{float:"right"}} className="fa-solid fa-plus"></i></Button1>
                     <div ref={box4ref}  style={{display:"none",lineHeight:"1.4"}}>
                       <br />
                       Machine wash according to instructions on care label
@@ -269,7 +304,7 @@ const Rightdescbox=({pdata})=>{
           </div>
         </Lookafterme>
         <Aboutme>
-        <div><Button1 ref={box5ref1} onClick={()=>{handledisplay5()}} style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>About Me</span><i style={{float:"right"}} class="fa-solid fa-plus"></i></Button1>
+        <div><Button1 ref={box5ref1} onClick={()=>{handledisplay5()}} style={{width:"100%",backgroundColor:"white",border:"0px",fontWeight:"700"}}><span style={{float:"left"}}>About Me</span><i style={{float:"right"}} className="fa-solid fa-plus"></i></Button1>
                     <div ref={box5ref} style={{display:"none",lineHeight:"1.4"}}>
                       <br />
                       By choosing our Better Cotton products, you’re supporting ASOS’s 

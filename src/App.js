@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
 
-import { Productdetails } from './components/proddesc';
+import { Productdetails } from './components/descriptionpage/proddesc';
 
 function App() {
   return (

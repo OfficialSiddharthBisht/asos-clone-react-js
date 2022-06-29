@@ -1,7 +1,7 @@
 export const Prod_desc_page_Loading="Prod_desc_page_Loading";
 export const Prod_desc_page_Success="Prod_desc_page_Success";
 export const Prod_desc_page_Failure="Prod_desc_page_Failure";
-
+export const Inc_cart_count="Inc_cart_count";
 
 export const proddescLoading=()=>({
   type:Prod_desc_page_Loading
@@ -13,6 +13,10 @@ export const proddescSuccess=(payload)=>({
   export const proddescError=()=>({
     type:Prod_desc_page_Failure
   });
+  export const incCart=(payload)=>({
+    type:Inc_cart_count,
+    payload
+  })
 
   export const getProductdesc=({productid})=>
     async(dispatch)=>{

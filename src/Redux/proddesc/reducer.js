@@ -1,6 +1,6 @@
-import {Prod_desc_page_Loading,Prod_desc_page_Success,Prod_desc_page_Failure} from "./action";
+import {Prod_desc_page_Loading,Prod_desc_page_Success,Prod_desc_page_Failure,Inc_cart_count} from "./action";
 
-export const ProddescReducer=(store={pdata:[],isLoading:false,isError:false},{type,payload})=>{
+export const ProddescReducer=(store={pdata:[],isLoading:false,isError:false,cartCount:0},{type,payload})=>{
     switch(type){
         case Prod_desc_page_Loading:
             return{
@@ -23,6 +23,11 @@ export const ProddescReducer=(store={pdata:[],isLoading:false,isError:false},{ty
                 isError:true,
                 pdata:[]
             };
+        case  Inc_cart_count:
+            return{
+               ...store,
+               cartCount:store.cartCount+payload
+            };    
         default:
             return store;         
     }
