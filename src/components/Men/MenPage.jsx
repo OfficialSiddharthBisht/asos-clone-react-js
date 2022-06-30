@@ -1,10 +1,11 @@
 import MenProduct from './MenProduct'
 import { useEffect,useState } from "react";
 import { Select } from "../Select/select";
+import {Link} from "react-router-dom"
 
 export function MenPage() {
     const [data,setData] = useState([]);
- 
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -12,10 +13,10 @@ export function MenPage() {
   
 
   const fetchData = async () => {
-    const Data = await fetch("http://localhost:5000/men-all").then((res) => res.json());
+    const Data = await fetch("http://localhost:5000/men-all") .then((res) => res.json())
     setData(Data)
   };
-  console.log("data" , data)
+
   return (
     <div className="App">
        <Select/>
@@ -23,15 +24,15 @@ export function MenPage() {
         {data.map((e) => {
           return (
             <MenProduct
-              
-              image={e.imageUrl}
+              id={e.id}  
+              image={e.imageUrl[0]}
               name={e.name}
-              price={e.price}
+              priceCurr={e.price.current.text}
+              pricePrev = {e.price.previous.text}
             />
           );
         })}
       </div>
-      
     </div>
   )
 }
