@@ -6,7 +6,7 @@ import {incCart} from "../../Redux/proddesc/action"
 const Mrightbox=styled.div`
   display:inline-block;
   width:22%;
-  margin-right:250px;
+  margin-right:16%;
   padding:10px;
   margin-bottom:50px;
 `;
@@ -208,9 +208,9 @@ const Rightdescbox=({pdata})=>{
              fontStyle:"normal",fontWeight:"700",color:"#555"}}
             >{pdata[0].price.current.text}</span>
             :<span style={{fontSize:"20px",lineHeight:"1.1",letterSpacing:"2.8px",fontFamily:"futura-pt-n7,futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif",
-             fontStyle:"normal",fontWeight:"700",color:"#555"}}
+             fontStyle:"normal",fontWeight:"700",color:"#d01345"}}
             ><s>{pdata[0].price.previous.text}</s>{" "}
-            <span>{pdata[0].price.current.text}</span></span>
+            <span style={{color:"#2d2d2d"}}>{pdata[0].price.current.text}</span></span>
         }
         <p><span style={{color:"#2d2d2d",fontSize:"12px",lineHeight:"1.7",letterSpacing:"1.7px",textTransform:"uppercase",paddingRight:"6px",
          fontFamily:"futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif",fontStyle:"normal",fontWeight:"700"}}

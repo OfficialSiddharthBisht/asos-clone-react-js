@@ -6,7 +6,7 @@ import { useRef} from "react";
 const Mleftbox=styled.div`
       display:inline-block;
       width:42%;
-      margin-left:250px;
+      margin-left:16%;
       padding:10px;  
       display:flex; 
       // position:fixed;

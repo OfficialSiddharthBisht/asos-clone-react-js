@@ -6,7 +6,7 @@ import { useParams } from "react-router";
 import { Leftdescbox } from "./leftdescbox";
 import { Rightdescbox } from "./rightdescbox";
 import { MightAlsoLike } from "./Mightalsolike";
-import StickyBox from "react-sticky-box";
+
 
 
 export const Productdetails=()=>{
