@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
-import Home from './components/Men/home';
+import Women from './components/Women/Womenhome'
+// import {MenPage} from './components/Men/MenPage';
 import Footer  from './components/Footer/footer';
-import {Bergpage} from './components/bergpage/bergpage'
+// import {Bergpage} from './components/bergpage/bergpage'
 
 function App() {
   return (
     <div className="App">
       <>
-        <Home></Home>
+      <Women></Women>
+      {/* <MenPage/> */}
+        {/* <Home></Home> */}
         {/* <Bergpage /> */}
         <Footer/>
       </>

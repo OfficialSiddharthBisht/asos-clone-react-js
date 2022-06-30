@@ -1,6 +1,5 @@
 { 
     "women-all" : [
-        [
             {
                 "id": 202189778,
                 "name": "Peek & Beau Fuller Bust Exclusive triangle bikini top in green texture",
@@ -2449,10 +2448,8 @@
                 "isSellingFast": false,
                 "sponsoredCampaignId": null
             }
-        ]
 ],
     "men-all" : [
-        [
             {
                 "id": 202619810,
                 "name": "Only & Sons polo in dark grey colour block",
@@ -4900,8 +4897,7 @@
                 "videoUrl": null,
                 "isSellingFast": false,
                 "sponsoredCampaignId": null
-            }
-        ]
+            } 
 ],
     "shoes" : [
     {
