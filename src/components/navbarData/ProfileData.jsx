@@ -94,10 +94,10 @@ export const ProfileData = () => {
                          <StyledLink to ="/accountSign/AccountJoin">My Account</StyledLink>
                  </div>)}
                  <div>
-                         <StyledLink to = "/">
+                         <StyledLink to = "/cart">
                                <CgShoppingBag/>
                          </StyledLink>
-                         <StyledLink to ="/">My Orders</StyledLink>
+                         <StyledLink to ="/cart">My Orders</StyledLink>
                  </div>
                  <div>
                           <StyledLink to ="/">

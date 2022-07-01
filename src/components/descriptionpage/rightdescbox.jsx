@@ -195,7 +195,7 @@ const Rightdescbox=({pdata})=>{
       .then((res)=>{
           console.log("testing",res);
           dispatch(incCart(1));
-          navigate("/cart")
+          navigate("/cart");
       })
     }
   }

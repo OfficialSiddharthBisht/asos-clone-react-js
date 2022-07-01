@@ -46,6 +46,8 @@ const Button=styled.button`
 `;
 const Leftdescbox=({pdata})=>{
 
+  console.log(pdata);
+
   let imagesarr=pdata[0].imageUrl;
   //console.log(imagesarr)
   let imgindex=1;

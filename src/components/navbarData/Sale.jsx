@@ -8,7 +8,7 @@ const StyledDiv = Styled.div`
       position : absolute;
       top : 110px;
       left : 30px;
-      z-index : 0;
+      z-index : 50;
 
 
       &>div:nth-child(1){

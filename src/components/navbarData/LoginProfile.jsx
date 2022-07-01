@@ -32,7 +32,7 @@ import {logOut , logIn} from "../../Redux/AuthLogin/action"
 const NameDiv = Styled.div`
         display : flex;
         gap : 20px;
-        height : 100px;
+        height : 200px;
         align-items : center;
         padding : 30px 0px;
         border-bottom : 10px solid white;
@@ -40,7 +40,7 @@ const NameDiv = Styled.div`
 
   const CircleDiv = Styled.div`
      background: black;
-     width : 50px;
+     width : 80px;
      border-radius : 50%;
      color : white;
      font-size : 30px;
