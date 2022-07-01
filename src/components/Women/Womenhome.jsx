@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 import '../Men/home.css';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+
 
 const Home = () => {
   const data = [
