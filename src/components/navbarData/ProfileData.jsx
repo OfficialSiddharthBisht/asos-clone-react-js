@@ -1,3 +1,4 @@
+import React from "react";
 import {Link} from "react-router-dom";
 import Styled from "styled-components";
 import {AiOutlineContacts , AiOutlineClose} from "react-icons/ai"
@@ -6,10 +7,7 @@ import {GrContact} from "react-icons/gr";
 import {VscTriangleUp} from "react-icons/vsc";
 import {useSelector , useDispatch} from "react-redux";
 import {inVisProfile} from "../../Redux/profileData/action";
-import {logOut} from "../../Redux/AuthLogin/action";
-
-
-
+import {logOut , logIn} from "../../Redux/AuthLogin/action";
 
 
 const StyledDiv = Styled.div`
@@ -54,6 +52,16 @@ export const ProfileData = () => {
        const dispatch = useDispatch();
        const {profileVisible } = useSelector((state) => state. ProfileToggle )
        const authData = useSelector((state) => state.AuthData);
+
+
+       React.useEffect(() => {
+         const userAuth = JSON.parse(localStorage.getItem("userAuth"))
+          if(userAuth === null){
+             dispatch(logOut());
+          }else {
+              dispatch(logIn(userAuth))
+          }
+     } , [dispatch])
      
       return (
           <StyledDiv visible = {profileVisible} onMouseLeave= {() => dispatch(inVisProfile())}>

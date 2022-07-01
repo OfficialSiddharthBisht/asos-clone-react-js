@@ -8,7 +8,7 @@ import {WomenData}  from "./navbarData/WomenData"
 import React from "react";
 import {ProfileData} from "./navbarData/ProfileData"
 import {useDispatch} from "react-redux";
-import {toggleProfile , inVisProfile} from "../Redux/profileData/action";
+import {toggleProfile} from "../Redux/profileData/action";
 import asosLogo from  "./../logos/asosLogo.png";
 
 const HeaderDiv = Styled.div`
@@ -89,7 +89,18 @@ const NavbarSecond = Styled.div`
         z-index : -2;
 `
 const NavbarThird = Styled.div`
+       height : 60px;
+       display : flex;
+       padding : 0px 5%;
+       justify-content : space-between;
+       background : green;
+       align-items : center;
 
+       &>div{
+          border : 2px solid black;
+            padding : 10px 20px;
+            
+       }
 `
 
 const Navbar = () => {
@@ -117,12 +128,12 @@ const Navbar = () => {
                                    </StyledLink>
                              </div>   
                              <WomenDiv border = {border} gender = {click} onClick = {handleClick1}>
-                                    <StyledLink to = "/">WOMEN
+                                    <StyledLink to = "/Women/Womenhome">WOMEN
                                           
                                     </StyledLink>
                              </WomenDiv>  
                              <MenDiv border = {border} gender = {click} onClick = {handleClick2}>
-                                     <StyledLink to = "/">MEN</StyledLink>
+                                     <StyledLink to = "/Men/Home">MEN</StyledLink>
                              </MenDiv>  
                              <div>
                                       <SearchBox>
@@ -179,7 +190,12 @@ const Navbar = () => {
                     </NavbarSecond>
 
                       <NavbarThird>
-                           
+                               <div>
+                                     <StyledLink to= "/Women/Womenhome">WOMEN</StyledLink>
+                               </div>
+                               <div>
+                                     <StyledLink to ="/Men/MenPage">MEN</StyledLink>
+                               </div>
                       </NavbarThird>
           </HeaderDiv>
       )

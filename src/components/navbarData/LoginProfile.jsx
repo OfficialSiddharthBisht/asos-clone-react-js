@@ -1,5 +1,6 @@
+import React from "react";
 import Styled from "styled-components";
-import {useSelector} from "react-redux";
+import {useSelector , useDispatch} from "react-redux";
 import {CgProfile , CgShoppingBag , CgGift} from "react-icons/cg";
 import {Link} from "react-router-dom";
 import {GrContact} from "react-icons/gr";
@@ -7,6 +8,7 @@ import {BiLock , BiDetail , BiHelpCircle , BiNotepad} from "react-icons/bi";
 import {AiOutlineHome} from "react-icons/ai";
 import {MdPayment , MdOutlineAssignmentReturned ,MdOutlineKeyboardReturn} from "react-icons/md";
 import {TiSocialGithub , TiShoppingBag} from "react-icons/ti";
+import {logOut , logIn} from "../../Redux/AuthLogin/action"
 
 
   const StyledDiv = Styled.div`
@@ -49,7 +51,20 @@ const NameDiv = Styled.div`
   `
 
 export const LoginProfile = () => {
-    const authData = useSelector((state) => state.AuthData);
+       const dispatch = useDispatch();
+     
+       React.useEffect(()=> {
+            const userAuth = JSON.parse(localStorage.getItem("userAuth"))
+            if(userAuth === null){
+               dispatch(logOut());
+            }else {
+                dispatch(logIn(userAuth))
+            }
+       } , [dispatch])
+
+
+  const authData = useSelector((state) => state.AuthData);
+
 
 
        return(
