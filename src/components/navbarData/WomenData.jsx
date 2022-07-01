@@ -1,5 +1,6 @@
 import Styled from "styled-components";
 import React from "react";
+import {SaleData} from "./Sale";
 
 const StyledDiv = Styled.div`
       display : flex;
@@ -55,6 +56,7 @@ justify-content : center;
 `
 
 export const WomenData = () => {
+    const [id , setId] = React.useState("")
       const [state, setState] = React.useState({  
         activeData : [],
         data : [
@@ -133,16 +135,20 @@ export const WomenData = () => {
         }
     }
        return(
+          <>
            <StyledDiv>
                 {
                     state.data.map((element , index) => (
                         
-                         element.type === "Sale"?(<ParentParaDiv key = {index} className = {toggleActiveClass(index)+"unique"} onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):(element.type=== "Outlet")?(<ParentParaDiv key = {index} className = {toggleActiveClass(index)+"unique"}  onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):
-                         (<div key = {index} className = {toggleActiveClass(index)} onClick = {()=>toggleActive(index)}>{element.type}</div>)
+                         element.type === "Sale"?(<ParentParaDiv id = {()=> setId(element.id)} key = {index} className = {toggleActiveClass(index)+"unique"} onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):(element.type=== "Outlet")?(<ParentParaDiv id = {() => setId(element.id)} key = {index} className = {toggleActiveClass(index)+"unique"}  onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):
+                         (<div id = {() => setId(element.id)} key = {index} className = {toggleActiveClass(index)} onClick = {()=>toggleActive(index)}>{element.type}</div>)
                         
                     ))
                 }
            </StyledDiv>
+             {id === 1 && <SaleData/>}
+             {id === 2 && <SaleData />}
+         </>
        )
 
     }

@@ -5,7 +5,11 @@ import {CgProfile , CgShoppingBag} from "react-icons/cg";
 import {GrContact} from "react-icons/gr";
 import {VscTriangleUp} from "react-icons/vsc";
 import {useSelector , useDispatch} from "react-redux";
-import {inVisProfile} from "../../Redux/profileData/action"
+import {inVisProfile} from "../../Redux/profileData/action";
+import {logOut} from "../../Redux/AuthLogin/action";
+import {LoginProfile} from "./LoginProfile";
+import {useNavigate} from "react-router-dom";
+
 
 
 const StyledDiv = Styled.div`
@@ -29,6 +33,7 @@ const StyledDiv = Styled.div`
   &>div:first-child{
       
        justify-content : space-around;
+       cursor : pointer;
        
   }
     
@@ -50,29 +55,39 @@ const CloseBtn = Styled.div`
 
 export const ProfileData = () => {
        const dispatch = useDispatch();
-      const {profileVisible } = useSelector((state) => state. ProfileToggle )
+       const {profileVisible } = useSelector((state) => state. ProfileToggle )
+       const authData = useSelector((state) => state.AuthData);
+       const navigate = useNavigate();
       return (
           <StyledDiv visible = {profileVisible} onMouseLeave= {() => dispatch(inVisProfile())}>
                  <div>
-                           <div>
-                                  <StyledLink link to = "/accountSign/AccountSign">Sign In</StyledLink> 
+                           {authData.Auth ? (<div style = {{fontWeight : 600 }}><span>Hii</span>{"  "}{authData.users[0].firstName}</div>) :
+                           (<div>
+                                  <StyledLink link to = "/accountSign/AccountJoin">Join</StyledLink> 
                                  
-                           </div>
-                           <div>
-                           <StyledLink link to = "/accountSign/AccountJoin">Join</StyledLink>    
-                           </div>
+                           </div>)}
+
+                           {authData.Auth ? (<div onClick = {() => dispatch(logOut())} >Sign Out</div>):
+                           (<div>
+                           <StyledLink link to = "/accountSign/AccountSign">Sign in</StyledLink>    
+                           </div>)}
                            <div onClick = {() => dispatch(inVisProfile())}>
                                 <AiOutlineClose style = {{
                                       cursor : "pointer",
                                 }}/>
                            </div>
                  </div>
-                 <div>
+                 {authData.Auth?(<div>
+                         <StyledLink to = "/navbarData/loginProfile">
+                                <CgProfile />
+                         </StyledLink>
+                         <StyledLink to = "/navbarData/loginProfile">My Account</StyledLink>
+                 </div>):(<div>
                          <StyledLink to = "/accountSign/AccountJoin">
                                 <CgProfile />
                          </StyledLink>
                          <StyledLink to ="/accountSign/AccountJoin">My Account</StyledLink>
-                 </div>
+                 </div>)}
                  <div>
                          <StyledLink to = "/">
                                <CgShoppingBag/>

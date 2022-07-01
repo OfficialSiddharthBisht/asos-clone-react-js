@@ -1,6 +1,7 @@
 import Styled from "styled-components";
 import React from "react";
 import {useDispatch} from "react-redux";
+import {SaleData} from "./Sale";
 
 const StyledDiv = Styled.div`
       display : flex;
@@ -25,6 +26,7 @@ const StyledDiv = Styled.div`
       &>div.active{
         padding : 15px 20px;
         border : 1px solid skyblue;
+        background : white;
         
     }
 
@@ -52,6 +54,7 @@ justify-content : center;
 `
 
 export const MenData = () => {
+      const [id , setId] = React.useState("")
       const [state, setState] = React.useState({  
         activeData : [],
         data : [
@@ -109,7 +112,7 @@ export const MenData = () => {
         }
     ]
 })
-
+  
  
     function toggleActive(index){
         setState({...state , activeData : state.data[index]})
@@ -125,16 +128,20 @@ export const MenData = () => {
         }
     }
        return(
+           <>
            <StyledDiv>
                 {
                     state.data.map((element , index) => (
                         
-                         element.type === "Sale"?(<ParentParaDiv key = {index} className = {toggleActiveClass(index)+"unique"} onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):(element.type=== "Outlet")?(<ParentParaDiv key = {index} className = {toggleActiveClass(index)+"unique"}  onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):
-                         (<div key = {index} className = {toggleActiveClass(index)} onClick = {()=>toggleActive(index)}>{element.type}</div>)
+                         element.type === "Sale"?(<ParentParaDiv id = {id} key = {index} onMouseOver = {()=> setId(element.id)} className = {toggleActiveClass(index)+"unique"} onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):(element.type=== "Outlet")?(<ParentParaDiv id = {id} key = {index} onMouseOver = {() => setId(element.id)} className = {toggleActiveClass(index)+"unique"}  onClick = {()=>toggleActive(index)}><ParaDiv>{element.type}</ParaDiv></ParentParaDiv>):
+                         (<div id = {id} key = {index} className = {toggleActiveClass(index)} onClick = {()=>toggleActive(index)} onMouseOver= {()=> setId(element.id)}>{element.type}</div>)
                         
                     ))
                 }
            </StyledDiv>
+               {id === 1 && <SaleData/>}
+               {id === 2 && <SaleData />}
+           </>
        )
 
     }
