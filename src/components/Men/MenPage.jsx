@@ -1,27 +1,48 @@
 import MenProduct from './MenProduct'
 import { useEffect,useState } from "react";
 import { Select } from "../Select/select";
-import {Link} from "react-router-dom"
 
 export function MenPage() {
     const [data,setData] = useState([]);
+    const [sortType,SetSortType] = useState("")
+    const [filterType,SetFilterType] = useState("")
+    const [colour,SetColour] = useState("")    
+    console.log("type of filter",filterType)
+    console.log("type of colour",colour)
 
+console.log("sorttype is" ,sortType)
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [colour],[filterType]);
 
-  
-
-  const fetchData = async () => {
-    const Data = await fetch("http://localhost:8080/men-all") .then((res) => res.json())
-    setData(Data)
+  const fetchData = () => {
+    if(colour=="" ){
+      fetch(`http://localhost:8080/men-all?q=${filterType}`) .then((res) => res.json()).then((res)=>{
+      setData(res)
+    })
+    }
+    else {
+      fetch(`http://localhost:8080/men-all?q=${filterType}&colour=${colour}`) .then((res) => res.json()).then((res)=>{
+      setData(res)
+    })
+    }
+ 
   };
+  const handleSort = (value) =>{
+    SetSortType(value)
+  }
+  // const handleFilter = (value) =>{
+  //   console.log("filter",value)
+  //   SetFilterType(value)
+  //   }
+
 
   return (
     <div className="App">
-       <Select/>
+       <Select handleSort={handleSort} SetFilterType={SetFilterType} SetColour={SetColour}/>
       <div id="box">
-        {data.map((e) => {
+        {
+        data.map((e) => {
           return (
             <MenProduct
               id={e.id}  
@@ -35,6 +56,5 @@ export function MenPage() {
       </div>
     </div>
   )
-}
-
+      }
 export default MenPage
