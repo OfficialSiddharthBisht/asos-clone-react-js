@@ -5,7 +5,6 @@ import {AccountJoin} from "./components/accountSign/AccountJoin"
 import {Routes , Route} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {logIn , logOut} from "./Redux/AuthLogin/action"
-import Home from './components/Men/home';
 import {LoginProfile} from "./components/navbarData/LoginProfile";
 import {getAlluser} from "./Redux/usersData/action";
 import Home from './components/Men/home'
@@ -42,8 +41,8 @@ function App() {
                 <Route path = "/accountSign/AccountJoin" element = {<AccountJoin />}></Route>
                 <Route path = "/navbarData/LoginProfile" element = {<LoginProfile />}></Route>
                 <Route path='/Products' element={<MenPage/>}></Route>
-                 <Footer />
          </Routes>
+         <Footer />
     </div>
   );
 }

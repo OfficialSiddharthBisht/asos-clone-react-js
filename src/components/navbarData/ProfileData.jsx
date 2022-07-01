@@ -7,8 +7,8 @@ import {VscTriangleUp} from "react-icons/vsc";
 import {useSelector , useDispatch} from "react-redux";
 import {inVisProfile} from "../../Redux/profileData/action";
 import {logOut} from "../../Redux/AuthLogin/action";
-import {LoginProfile} from "./LoginProfile";
-import {useNavigate} from "react-router-dom";
+
+
 
 
 
@@ -49,15 +49,12 @@ font-family : futura-pt,sans-serif;
   }
 `
 
-const CloseBtn = Styled.div`
-       
-`
 
 export const ProfileData = () => {
        const dispatch = useDispatch();
        const {profileVisible } = useSelector((state) => state. ProfileToggle )
        const authData = useSelector((state) => state.AuthData);
-       const navigate = useNavigate();
+     
       return (
           <StyledDiv visible = {profileVisible} onMouseLeave= {() => dispatch(inVisProfile())}>
                  <div>
