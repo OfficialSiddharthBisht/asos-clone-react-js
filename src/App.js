@@ -8,7 +8,9 @@ import {logIn , logOut} from "./Redux/AuthLogin/action"
 import Home from './components/Men/home';
 import {LoginProfile} from "./components/navbarData/LoginProfile";
 import {getAlluser} from "./Redux/usersData/action";
-
+import Home from './components/Men/home'
+import {MenPage} from './components/Men/MenPage';
+import Footer  from './components/Footer/footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -39,7 +41,8 @@ function App() {
                 <Route path = "/accountSign/AccountSign" element = {<AccountSign />}></Route>
                 <Route path = "/accountSign/AccountJoin" element = {<AccountJoin />}></Route>
                 <Route path = "/navbarData/LoginProfile" element = {<LoginProfile />}></Route>
-              
+                <Route path='/Products' element={<MenPage/>}></Route>
+                 <Footer />
          </Routes>
     </div>
   );
