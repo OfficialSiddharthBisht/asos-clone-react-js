@@ -13,7 +13,7 @@ export function MenPage() {
   
 
   const fetchData = async () => {
-    const Data = await fetch("http://localhost:5000/men-all") .then((res) => res.json())
+    const Data = await fetch("http://localhost:8080/men-all") .then((res) => res.json())
     setData(Data)
   };
 

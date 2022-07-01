@@ -75,9 +75,10 @@ const SearchBox = Styled.div`
 position : relative;
  &>input{  
   width : 98%;
-  height : 35px;
+  height : 40px;
   border-radius : 20px;
-  padding-left : 20px;
+  padding-left : 30px;
+  padding-right : 20px;w   mm
   outline-color : skyblue;
   font-family : futura-pt,sans-serif;
  }
@@ -141,7 +142,7 @@ const Navbar = () => {
                                             <BiSearch style = {{
                                                  fontSize : "20px",
                                                  position : "absolute",
-                                                 right : "2px",
+                                                 right : "15px",
                                                  top : "12px",
                                                  cursor : "pointer"
                                                  
@@ -170,7 +171,7 @@ const Navbar = () => {
                                    
                              </div>  
                              <div>
-                                   <StyledLink to = "/">
+                                   <StyledLink to = "/cart">
                                      <BsBag style = {{
                                            fontSize : "23px",
                                            color : "white",
@@ -194,7 +195,7 @@ const Navbar = () => {
                                      <StyledLink to= "/Women/Womenhome">WOMEN</StyledLink>
                                </div>
                                <div>
-                                     <StyledLink to ="/Men/MenPage">MEN</StyledLink>
+                                     <StyledLink to ="/products">MEN</StyledLink>
                                </div>
                       </NavbarThird>
           </HeaderDiv>
