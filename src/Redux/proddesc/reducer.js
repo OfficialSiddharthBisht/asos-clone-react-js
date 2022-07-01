@@ -1,33 +1,28 @@
-import {Prod_desc_page_Loading,Prod_desc_page_Success,Prod_desc_page_Failure,Inc_cart_count} from "./action";
+import {Prod_desc_page_Loading,Prod_desc_page_Success,Prod_desc_page_Failure} from "./action";
 
-export const ProddescReducer=(store={pdata:[],isLoading:false,isError:false,cartCount:0},{type,payload})=>{
+export const ProddescReducer=(store={pdata:[],isLoading1:false,isError1:false},{type,payload})=>{
     switch(type){
         case Prod_desc_page_Loading:
             return{
                 ...store,
-                isLoading:true,
-                isError:false,
+                isLoading1:true,
+                isError1:false,
                 pdata:[]
             };
         case  Prod_desc_page_Success:
             return{
                 ...store,
-                isLoading:false,
-                isError:false,
+                isLoading1:false,
+                isError1:false,
                 pdata:[payload]
             };
         case  Prod_desc_page_Failure:
             return{
                 ...store,
-                isLoading:false,
-                isError:true,
+                isLoading1:false,
+                isError1:true,
                 pdata:[]
-            };
-        case  Inc_cart_count:
-            return{
-               ...store,
-               cartCount:store.cartCount+payload
-            };    
+            }; 
         default:
             return store;         
     }

@@ -10,17 +10,17 @@ import { MightAlsoLike } from "./Mightalsolike";
 
 
 export const Productdetails=()=>{
-    const {pdata,isLoading,isError}=useSelector((state)=>state.pdata);
+    const {pdata,isLoading1,isError1}=useSelector((state)=>state.pdata);
     const productid=useParams();
     const dispatch=useDispatch();
     useEffect(()=>{
         dispatch(getProductdesc(productid));
     },[dispatch]);
-    console.log(pdata,isLoading,isError)
-    if(isLoading){
+    console.log(pdata,isLoading1,isError1)
+    if(isLoading1){
         return <h1>Loading ...</h1>
     }
-    else if(isError){
+    else if(isError1){
         return <h1>SomeThing Went Wrong </h1>
     }
     if(pdata.length!=0){

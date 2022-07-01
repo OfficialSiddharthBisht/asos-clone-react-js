@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useRef} from "react";
 import { useSelector,useDispatch } from "react-redux";
-import {incCart} from "../../Redux/proddesc/action"
+import {incCart} from "../../Redux/cartpage/action";
+import { useNavigate } from "react-router";
 
 const Mrightbox=styled.div`
   display:inline-block;
@@ -115,7 +116,7 @@ const Aboutme=styled.div`
 `;
  
 const Rightdescbox=({pdata})=>{
-
+  const navigate=useNavigate();
   const dispatch=useDispatch();
   const sizeref=useRef();
   const stylealert=useRef();
@@ -192,7 +193,9 @@ const Rightdescbox=({pdata})=>{
         }
       }).then((res)=>res.json())
       .then((res)=>{
+          console.log("testing",res);
           dispatch(incCart(1));
+          navigate("/cart")
       })
     }
   }
