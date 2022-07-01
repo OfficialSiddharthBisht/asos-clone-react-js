@@ -17,12 +17,12 @@ console.log("sorttype is" ,sortType)
 
   const fetchData = () => {
     if(colour=="" ){
-      fetch(`http://localhost:5000/men-all?q=${filterType}`) .then((res) => res.json()).then((res)=>{
+      fetch(`http://localhost:8080/men-all?q=${filterType}`) .then((res) => res.json()).then((res)=>{
       setData(res)
     })
     }
-    else{
-      fetch(`http://localhost:5000/men-all?q=${filterType}&colour=${colour}`) .then((res) => res.json()).then((res)=>{
+    else {
+      fetch(`http://localhost:8080/men-all?q=${filterType}&colour=${colour}`) .then((res) => res.json()).then((res)=>{
       setData(res)
     })
     }
