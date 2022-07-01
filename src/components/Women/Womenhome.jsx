@@ -3,7 +3,7 @@ import '../Men/home.css';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 
-const Home = () => {
+const WomenHome = () => {
   const data = [
     {
       imgUrl:"https://images.asos-media.com/products/asos-design-plunge-neck-fluffy-mini-dress-in-hot-pink/201624497-1-hotpink?$n_640w$&wid=513&fit=constrain&hei=236&wid=185&bgc=000000" ,
@@ -121,4 +121,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default WomenHome
