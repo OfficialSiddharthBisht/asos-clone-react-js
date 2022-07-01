@@ -8,8 +8,6 @@ import { Leftdivision } from "./cartleftdivision";
 import { Rightdivision } from "./cartrightdivision";
 
 
-
-
 const Maindisplay=styled.div`
    background-color:#eee;
    min-height:438px;
