@@ -26,8 +26,7 @@ console.log("sorttype is" ,sortType)
       setData(res)
     })
     }
-
-      
+ 
   };
   const handleSort = (value) =>{
     SetSortType(value)

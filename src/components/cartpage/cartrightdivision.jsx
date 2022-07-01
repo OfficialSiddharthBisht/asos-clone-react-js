@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
 const Rightdivisionbox=styled.div`
-  top:10px;
+  top:180px;
   padding:20px;
   position:fixed;
   width:39.5833333333%;

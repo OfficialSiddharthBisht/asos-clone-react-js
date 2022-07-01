@@ -44,12 +44,10 @@ function App() {
                 <Route path = "/accountSign/AccountSign" element = {<AccountSign />}></Route>
                 <Route path = "/accountSign/AccountJoin" element = {<AccountJoin />}></Route>
                 <Route path = "/navbarData/LoginProfile" element = {<LoginProfile />}></Route>
-                <Route path='/Men/MenPage' element={<MenPage/>}></Route>
                 <Route path='/Women/Womenhome' element={<WomenHome/>}></Route>
                 <Route path='/Products' element={<MenPage/>}></Route>
                 <Route path="/products/:productid" element={<Productdetails />}> </Route>
                 <Route path="/cart" element={<Cartdisplay />}> </Route>
-         
          </Routes>
          <Footer />
     </div>
