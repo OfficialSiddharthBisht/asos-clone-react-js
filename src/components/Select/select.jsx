@@ -1,72 +1,72 @@
 import "./Select.css";
+import React from "react";
+export const Select = ({handleSort,SetFilterType,SetColour}) => {
+const [sortType,SetSortType] = React.useState("")
+const [filterType,SetfilterType] = React.useState("")
+const [colour,SetColorType] = React.useState("")
 
-export const Select = () => {
+
+handleSort = (sortType) 
+SetFilterType(filterType)
+SetColour(colour)
 
 
+console.log("colour type is" , colour)
   return (
    <div>
-     <h3 className="info">ASOS Weekend Collection</h3>
+     <h3 className="info">Men's Sale</h3>
       <p className="para">Looking for something new? Discover emerging trends, the latest clothing for men and the freshest new fits with our ASOS New In page. From sharp office shirts and suits to see you right through to 5PM, to the shorts, tees and vests that’ll keep you looking fresh– you can find the look here as soon as it lands. What’s more, our men’s new clothing selection includes all those accessory touches that make the difference, from laidback caps and timeless shades to boardroom-ready watches and belts.
       </p>
     <div className="select-div">
-     
-      <select className="sort" id="select" >
+      <select className="select" value={sortType} onChange={(e)=>SetSortType(e.target.value)}  >
         <option value="">Sort</option>
-        <option value="">Recommended</option>
-        <option value="">What's New</option>
-        <option value="low">Price high to low</option>
-        <option value="high">Price low to high</option>
-        
+        <option value="highToLow">Price high to low</option>
+        <option value="lowToHigh">Price low to high</option>
       </select>
-      <select name="" id="select">
+
+      <select  className="select" value={filterType} onChange={(e)=>SetfilterType(e.target.value)}>
+        <option value="">Category</option>
+        <option value="bag">bag</option>
+        <option value="t-shirt">t-shirt</option>
+        <option value="cap">cap</option>
+        <option value="socks">socks</option>
+      </select>
+      <br />
+      <select name="" className="select" value={colour} onChange={(e)=>SetColorType(e.target.value)}>
+        <option value="">Colour</option>
+        <option value="Black">Black</option>
+        <option value="Blue">Blue</option>
+        <option value="Dark Navy">Dark Navy</option>
+        <option value="Yellow">Yellow</option>
+        <option value="White">White</option>
+      </select>
+
+
+      <select name="" className="select">
         <option value="">Responsible</option>
         <option value="">Recycled(4)</option>
         <option value="">Sustainable Material</option>
       </select>
-      <select name="" id="select">
+      <select name="" className="select">
         <option value="">Sale/New Season</option>
         <option value="">New Season(4)</option>
         <option value="">Sale</option>
       </select>
-      <select name="" id="select">
-        <option value="">Category</option>
+      <select name="" className="select" >
+        <option value="">Product type</option>
         <option value="">Accessories(5)</option>
         <option value="">Face + Body(1)</option>
         <option value="">Footwear</option>
         <option value="">Jeans & Trousers</option>
         <option value="">Knitwear& Sweats</option>
+     
         <option value="">Outwear(6)</option>
-        <option value="">Shorts</option>
+        <option value="shorts" >Shorts</option>
         <option value="">Swimwear</option>
         <option value="">Tops</option>
         <option value="">Underwear& Nightwear</option>
       </select>
-      <select name="" id="select">
-        <option value="">Product Type</option>
-        <option value="">Backpacks</option>
-        <option value="">Bags(1)</option>
-        <option value="">Beanies</option>
-        <option value="">Belts</option>
-        <option value="">Boots</option>
-        <option value="">Boxers</option>
-        <option value="">Caps</option>
-        <option value="">Chinos(8)</option>
-        <option value="">Fleeces</option>
-        <option value="">Gilets(3)</option>
-        <option value="">Hats</option>
-        <option value="">Hoodies(26)</option>
-        <option value="">Jackets</option>
-        <option value="">Jeans</option>
-        <option value="">Joggers</option>
-        <option value="">Jumpers</option>
-        <option value="">Polo Shirts</option>
-        <option value="">Pyjama Bottoms</option>
-        <option value="">Pyjama Tops</option>
-        <option value="">Robes</option>
-        <option value="">Rugby Shirts</option>
-      </select>
-      <br />
-      <select name="" id="select">
+      <select name="" className="select">
         <option value="">Style</option>
         <option value="">5-Panel(10)</option>
         <option value="">Across Body(30)</option>
@@ -91,7 +91,7 @@ export const Select = () => {
         <option value="">Cargo Shorts</option>
         <option value="">Cargo Trousers</option>
       </select>
-      <select name="" id="select">
+      <select name="" className="select">
         <option value="">Discount%</option>
         <option value="">Up to 20%</option>
         <option value="">20% - 30%</option>
@@ -108,15 +108,8 @@ export const Select = () => {
         <option value="">ASOS MADE IN</option>
         <option value="">ASOS Unrvlld Spply(1)</option>
       </select>
-      <select name="" id="select">
-        <option value="">Colour</option>
-        <option value="">Black</option>
-        <option value="">Blue</option>
-        <option value="">Brown</option>
-        <option value="">Copper</option>
-        <option value="">Green</option>
-      </select>
-      <select name="" id="select">
+    
+      <select name="" className="select">
         <option value="">Size</option>
         <option value="">UK2</option>
         <option value="">UK3.5</option>

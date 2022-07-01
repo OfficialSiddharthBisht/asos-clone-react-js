@@ -207,7 +207,7 @@
           "isOutletPrice": false,
           "currency": "GBP"
         },
-        "colour": "Arrowwood Yellow/tnf",
+        "colour": "Yellow",
         "colourWayId": 203451200,
         "brandName": "The North Face",
         "hasVariantColours": false,
@@ -244,7 +244,7 @@
           "isOutletPrice": false,
           "currency": "GBP"
         },
-        "colour": "WHITE",
+        "colour": "White",
         "colourWayId": 203028157,
         "brandName": "Napapijri",
         "hasVariantColours": false,
@@ -355,7 +355,7 @@
           "isOutletPrice": false,
           "currency": "GBP"
         },
-        "colour": "Grey melange",
+        "colour": "Grey",
         "colourWayId": 202639489,
         "brandName": "Dickies",
         "hasVariantColours": false,
@@ -466,7 +466,7 @@
           "isOutletPrice": false,
           "currency": "GBP"
         },
-        "colour": "Turtle Brown",
+        "colour": "Brown",
         "colourWayId": 202466897,
         "brandName": "The North Face",
         "hasVariantColours": false,
@@ -503,7 +503,7 @@
           "isOutletPrice": false,
           "currency": "GBP"
         },
-        "colour": "Goblin Blue",
+        "colour": "Blue",
         "colourWayId": 202466712,
         "brandName": "The North Face",
         "hasVariantColours": false,
