@@ -1,4 +1,6 @@
 import React from 'react';
+import { Cartdisplay } from './components/cartpage/cartdisplay';
+import { Productdetails } from './components/descriptionpage/proddesc';
 import Navbar from "./components/Navbar";
 import {AccountSign} from "./components/accountSign/AccountSign";
 import {AccountJoin} from "./components/accountSign/AccountJoin"
@@ -44,6 +46,10 @@ function App() {
                 <Route path = "/navbarData/LoginProfile" element = {<LoginProfile />}></Route>
                 <Route path='/Men/MenPage' element={<MenPage/>}></Route>
                 <Route path='/Women/Womenhome' element={<WomenHome/>}></Route>
+                <Route path='/Products' element={<MenPage/>}></Route>
+                <Route path="/products/:productid" element={<Productdetails />}> </Route>
+                <Route path="/cart" element={<Cartdisplay />}> </Route>
+         
          </Routes>
          <Footer />
     </div>
