@@ -12,6 +12,7 @@ import {getAlluser} from "./Redux/usersData/action";
 import Home from './components/Men/home'
 import {MenPage} from './components/Men/MenPage';
 import Footer  from './components/Footer/footer';
+import WomenHome from "./components/Women/Womenhome";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,10 +39,13 @@ function App() {
     <div>
          <Navbar />
          <Routes>
-                <Route path = "/" element = {<Home/>}></Route>
+                <Route path = "/" element = {<Home/>}></Route>  
+                <Route path = "/Men/Home" element = {<Home/>}></Route>
                 <Route path = "/accountSign/AccountSign" element = {<AccountSign />}></Route>
                 <Route path = "/accountSign/AccountJoin" element = {<AccountJoin />}></Route>
                 <Route path = "/navbarData/LoginProfile" element = {<LoginProfile />}></Route>
+                <Route path='/Men/MenPage' element={<MenPage/>}></Route>
+                <Route path='/Women/Womenhome' element={<WomenHome/>}></Route>
                 <Route path='/Products' element={<MenPage/>}></Route>
                 <Route path="/products/:productid" element={<Productdetails />}> </Route>
                 <Route path="/cart" element={<Cartdisplay />}> </Route>
