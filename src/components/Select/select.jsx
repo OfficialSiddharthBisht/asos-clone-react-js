@@ -100,14 +100,14 @@ console.log("colour type is" , colour)
         <option value="">50% - 60%</option>
         <option value="">60% - 70%</option>
       </select>
-      <select name="" id="select">
+      {/* <select name="" id="select">
         <option value="">Style</option>
         <option value="">ASOS 4505</option>
         <option value="">ASOS DESIGN(30)</option>
         <option value="">ASOS EDITION</option>
         <option value="">ASOS MADE IN</option>
         <option value="">ASOS Unrvlld Spply(1)</option>
-      </select>
+      </select> */}
     
       <select name="" className="select">
         <option value="">Size</option>
